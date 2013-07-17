@@ -5,6 +5,7 @@
 #
 require 'country_select/version'
 require 'country_select/countries'
+require 'i18n'
 
 module ActionView
   module Helpers
@@ -76,7 +77,15 @@ module ActionView
                    ::CountrySelect::COUNTRIES_FOR_SELECT
                  end
 
-        return country_options + options_for_select(values, selected)
+        i18n_values = {}
+        if values.kind_of?(Hash)
+          values.each do |k, v|
+            i18n_values[I18n.t(k)] = v
+          end
+        else
+          i18n_values = values.map {|v| I18n.t(v)}.sort
+        end
+        return country_options + options_for_select(i18n_values, selected)
       end
 
       # All the countries included in the country_options output.

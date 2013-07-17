@@ -244,7 +244,7 @@ module CountrySelect
     "ve" => "Venezuela, Bolivarian Republic of",
     "vn" => "Viet Nam",
     "vg" => "Virgin Islands, British",
-    "vi" => "Virgin Islands, U.S.",
+    "vi" => "Virgin Islands, US",
     "wf" => "Wallis and Futuna",
     "eh" => "Western Sahara",
     "ye" => "Yemen",
